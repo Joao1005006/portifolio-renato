@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>João Pedro Gonçalves Borges - Software Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#88929b",
+                        "primary-container": "#0ea5e9",
+                        "error-container": "#93000a",
+                        "primary": "#89ceff",
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "surface-container-highest": "#2d3449",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-high": "#222a3d",
+                        "surface-container": "#171f33",
+                        "primary-fixed-dim": "#89ceff",
+                        "inverse-primary": "#006591",
+                        "surface-variant": "#2d3449",
+                        "on-background": "#dae2fd",
+                        "surface-bright": "#31394d",
+                        "on-primary-fixed": "#001e2f",
+                        "tertiary-container": "#8d90ff",
+                        "surface-dim": "#0b1326",
+                        "secondary": "#4edea3",
+                        "on-error": "#690005",
+                        "on-primary-container": "#003751",
+                        "surface": "#0b1326",
+                        "on-secondary-container": "#00311f",
+                        "on-secondary": "#003824",
+                        "on-tertiary-container": "#1407ad",
+                        "on-primary-fixed-variant": "#004c6e",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary": "#c0c1ff",
+                        "on-tertiary": "#1000a9",
+                        "background": "#0b1326",
+                        "tertiary-fixed": "#e1e0ff",
+                        "on-surface-variant": "#bec8d2",
+                        "inverse-on-surface": "#283044",
+                        "inverse-surface": "#dae2fd",
+                        "on-primary": "#00344d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-low": "#131b2e",
+                        "on-surface": "#dae2fd",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed": "#c9e6ff",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "surface-tint": "#89ceff",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#00a572",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#07006c",
+                        "outline-variant": "#3e4850"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "0.5rem",
+                        "gutter": "1.5rem",
+                        "stack-lg": "2rem",
+                        "section-gap": "8rem",
+                        "container-max": "1280px",
+                        "stack-md": "1rem"
+                    },
+                    "fontFamily": {
+                        "h1": ["Space Grotesk"],
+                        "h2": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "code-inline": ["monospace"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "code-inline": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .glass-panel {
+            background-color: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.surface-container-high');
+        }
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(to right, theme('colors.primary'), theme('colors.tertiary'));
+            filter: blur(15px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: inherit;
+        }
+        .glow-effect:hover::before {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-16">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 bg-slate-900/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-slate-800/50 shadow-xl shadow-sky-500/5">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
+<div class="text-xl font-bold tracking-tighter text-slate-100 dark:text-white font-space-grotesk font-medium tracking-tight">JP Borges</div>
+<div class="hidden md:flex gap-6"><a class="text-sky-500 dark:text-sky-400 border-b-2 border-sky-500 pb-1 font-space-grotesk font-medium tracking-tight hover:text-sky-400 dark:hover:text-sky-300 transition-colors duration-200 active:scale-95 transition-transform" href="#about">Sobre</a>
+<a class="text-slate-400 dark:text-slate-500 font-space-grotesk font-medium tracking-tight hover:text-sky-400 dark:hover:text-sky-300 transition-colors duration-200 active:scale-95 transition-transform" href="#skills">Habilidades</a>
+<a class="text-slate-400 dark:text-slate-500 font-space-grotesk font-medium tracking-tight hover:text-sky-400 dark:hover:text-sky-300 transition-colors duration-200 active:scale-95 transition-transform" href="#projects">Projetos</a>
+<a class="text-slate-400 dark:text-slate-500 font-space-grotesk font-medium tracking-tight hover:text-sky-400 dark:hover:text-sky-300 transition-colors duration-200 active:scale-95 transition-transform" href="#contact">Contato</a></div>
+<button class="bg-gradient-to-r from-primary to-tertiary text-on-primary-container px-4 py-2 rounded font-label-caps uppercase glow-effect active:scale-95 transition-transform">Currículo</button>
+</div>
+</nav>
+<main class="flex-grow flex flex-col items-center w-full max-w-container-max mx-auto px-6 space-y-section-gap py-section-gap">
+<!-- Hero Section -->
+<section class="w-full flex flex-col md:flex-row items-center gap-gutter" id="about">
+<div class="flex-1 flex flex-col gap-stack-lg items-start relative">
+<!-- Radial glow behind text -->
+<div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="flex flex-col gap-stack-sm">
+<span class="font-label-caps text-secondary tracking-widest uppercase">19 Y/O Software Developer</span>
+<h1 class="font-h1 text-h1 text-on-surface">Building the future with code</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        I specialize in building robust systems with C++ and crafting dynamic web experiences using JavaScript. Currently diving deep into the world of Databases to build end-to-end scalable solutions.
+                    </p>
+</div>
+<a class="inline-flex items-center gap-2 bg-surface-container-high border border-outline-variant px-6 py-3 rounded-lg font-label-caps text-label-caps text-on-surface hover:border-primary transition-colors glow-effect" href="#projects">Ver Projetos
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span></a>
+</div>
+<div class="flex-1 w-full max-w-md aspect-square relative rounded-xl overflow-hidden border border-surface-container-high glass-panel">
+<img alt="Portrait of João Pedro Gonçalves Borges" class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" data-alt="A professional, slightly moody portrait of a young male software developer (19 years old) in a modern, dimly lit studio setting. The lighting is dramatic with cool cyan and subtle purple rim lights that reflect off a sleek desk setup in the blurred background. The aesthetic is high-tech, minimalist, and aligns with a dark-mode 'IDE-plus' visual style." src="https://lh3.googleusercontent.com/aida/ADBb0ugeB5S3pFOkAnRTe-P0YeIgL1aYAof0jbYrIX9njbDSFlDBTTrcki9R_-TiTnzerUCRRckzv0q3654kzbW9w-hupY004q7_STO4XCoPTbiQYE82pt9QPwkUjeA4PiCvaKfHvKXxjeHK5eIfua-GiIOCLGyoFaEY4GrIKRQwC23Jdnm-2TCpExrVHqtE3h7LwwEJc5TKi0cJ5CTxe2q5y-4Cz5BDZgN8gr-IoaTh3qOXV3BuiKXpsgTPC9CxscoAEZPfXHUkrImW"/>
+</div>
+</section>
+<!-- About / Journey -->
+<section class="w-full max-w-3xl flex flex-col gap-stack-md text-center"><h2 class="font-h2 text-h2 text-on-surface">A Jornada Até Aqui</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+    Meu fascínio por software começou não apenas com o desejo de usar tecnologia, mas com a necessidade de entender como ela era construída do zero. Esse impulso me levou ao poder bruto do C++ para programação de sistemas e ao impacto imediato do JavaScript para a web. Agora, estou unindo performance e persistência dominando arquiteturas modernas de bancos de dados. Desenvolvo para resolver quebra-cabeças lógicos complexos de forma elegante.
+</p></section>
+<!-- Skills Section (Bento-ish) -->
+<section class="w-full flex flex-col gap-stack-lg w-full" id="skills">
+<div class="flex flex-col gap-stack-sm text-center"><span class="font-label-caps text-primary tracking-widest uppercase">Arsenal Técnico</span>
+<h2 class="font-h2 text-h2 text-on-surface">Competências Principais</h2></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- C++ Card -->
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-stack-md relative overflow-hidden group hover:border-primary transition-colors">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors"></div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary font-code-inline font-bold text-xl border border-outline-variant">
+                        C++
+                    </div>
+<div><h3 class="font-h2 text-[24px] font-semibold text-on-surface mb-2">Sistemas &amp; Performance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Gerenciamento de memória de baixo nível, algoritmos e arquiteturas de computação de alto desempenho.</p></div>
+</div>
+<!-- JavaScript Card -->
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-stack-md relative overflow-hidden group hover:border-secondary transition-colors">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-colors"></div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-secondary font-code-inline font-bold text-xl border border-outline-variant">
+                        JS
+                    </div>
+<div><h3 class="font-h2 text-[24px] font-semibold text-on-surface mb-2">Ecossistemas Web</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Construção de interfaces de usuário reativas e modernas, além de lógica de servidor assíncrona.</p></div>
+</div>
+<!-- Databases Card -->
+<div class="glass-panel p-8 rounded-xl flex flex-col gap-stack-md relative overflow-hidden group hover:border-tertiary transition-colors">
+<div class="absolute top-4 right-4 bg-tertiary/20 text-tertiary px-2 py-1 rounded font-label-caps text-[10px] border border-tertiary/30">APRENDENDO</div>
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-tertiary/10 rounded-full blur-2xl group-hover:bg-tertiary/20 transition-colors"></div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-tertiary border border-outline-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">database</span>
+</div>
+<div><h3 class="font-h2 text-[24px] font-semibold text-on-surface mb-2">Persistência de Dados</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Explorando esquemas relacionais, documentos NoSQL e estratégias de otimização de consultas.</p></div>
+</div>
+</div>
+</section>
+<!-- Contact Form -->
+<section class="w-full max-w-2xl mx-auto flex flex-col gap-stack-lg mb-section-gap" id="contact">
+<div class="text-center flex flex-col gap-stack-sm"><span class="font-label-caps text-secondary tracking-widest uppercase">Iniciar Protocolo</span>
+<h2 class="font-h2 text-h2 text-on-surface">Vamos Colaborar</h2></div>
+<form class="glass-panel p-8 rounded-xl flex flex-col gap-stack-md">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="email">Saída do Sistema (E-mail)</label>
+<input class="bg-surface-dim border border-surface-container-high rounded-md p-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-shadow shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)]" id="email" placeholder="voce@dominio.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="message">Payload (Mensagem)</label>
+<textarea class="bg-surface-dim border border-surface-container-high rounded-md p-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-shadow shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)]" id="message" placeholder="Descreva seus requisitos técnicos..." rows="4"></textarea>
+</div>
+<button class="mt-4 bg-surface-container-high border border-outline-variant py-3 rounded-lg font-label-caps text-label-caps text-on-surface hover:border-primary transition-colors glow-effect flex items-center justify-center gap-2" type="button">Transmitir Mensagem
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">send</span></button>
+</form>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-12 bg-slate-950 dark:bg-slate-950 border-t border-slate-900">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6 font-space-grotesk text-xs uppercase tracking-widest">
+<div class="text-sm font-bold text-slate-200">
+                © 2024 João Pedro Gonçalves Borges
+            </div>
+<div class="flex gap-6 opacity-80 hover:opacity-100">
+<a class="text-slate-500 hover:text-sky-500 transition-colors" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-sky-500 transition-colors" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-sky-500 transition-colors" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+</body></html>
